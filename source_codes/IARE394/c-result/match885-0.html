@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+ <TITLE>19951a1234.c</TITLE>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="text/javascript">
+  <!--
+   function ZweiFrames(URL1,F1,URL2,F2)
+   {
+    parent.frames[F1].location.href=URL1;
+    parent.frames[F2].location.href=URL2;
+   }
+  //-->
+  </script>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<HR>
+<H3><CENTER>19951a1234.c</CENTER></H3><HR>
+<PRE>
+#include&lt;iostream&gt;
+<A NAME="0"></A>#include&lt;stdlib.h&gt;
+#include&lt;math.h&gt;
+using namespace std;
+<FONT color="#0000ff"><A HREF="javascript:ZweiFrames('match885-1.html#0',3,'match885-top.html#0',1)"><IMG SRC="forward.gif" ALT="other" BORDER="0" ALIGN="right"></A><B>int main(){
+int n,m,r,id[1000],amount[1000],bal[1000],pos;
+double bal1,bal2,amt1,amt2;
+string type[1000],type1,type2;
+double intr,totalin,sum=0;
+cin&gt;&gt;intr;
+cin&gt;&gt;r;
+for(int i=0;i&lt;r-2;i++){
+cin&gt;&gt;id[i]&gt;&gt;amount[i]&gt;&gt;type[i]&gt;&gt;bal[i];
+sum+=bal[i];
+}
+cin&gt;&gt;totalin;
+for(int i=0;i&lt;r-3;i++){//cout&lt;&lt;id[i];
+	if(id[i]!=id[i+1]-1)
+		{
+			pos=i+1;
+			break;
+		}
+
+}
+//cout&lt;&lt;sum&lt;&lt;&quot; &quot;;
+if(type[pos]==&quot;credit&quot;)
+{
+	sum+=bal[pos]-amount[pos];
+	bal2=bal[pos]-amount[pos];
+}
+else{
+	sum+=bal[pos]+amount[pos];
+	bal2=bal[pos]+amount[pos];
+}
+//cout&lt;&lt;bal[pos-1]&lt;&lt;&quot; &quot;&lt;&lt;bal1&lt;&lt;endl;
+
+ bal1=((totalin*100)*(365/(double)intr))-(double)sum;
+ if(bal1&gt;bal[pos-1]){
+	type1=&quot;credit&quot;;//cout&lt;&lt;&quot;x&quot;;
+	amt1=bal1-bal[pos-1];
+}
+else{
+ type1=&quot;debit&quot;;
+ amt1=bal[pos-1]-bal1;
+}
+
+if(bal2&gt;bal1) {
+	type2=&quot;credit&quot;;
+	amt2=bal2-bal1;
+}
+else {
+	type2=&quot;debit&quot;;
+	amt2=bal1-bal2;
+}
+cout&lt;&lt;pos+1&lt;&lt;&quot; &quot;&lt;&lt;amt1&lt;&lt;&quot; &quot;&lt;&lt;type1&lt;&lt;&quot; &quot;&lt;&lt;round(bal1)&lt;&lt;endl;
+
+cout&lt;&lt;pos+2&lt;&lt;&quot; &quot;&lt;&lt;amt2&lt;&lt;&quot; &quot;&lt;&lt;type2&lt;&lt;&quot; &quot;&lt;&lt;round(bal2)&lt;&lt;endl;
+}</B></FONT>
+</PRE>
+</BODY>
+</HTML>

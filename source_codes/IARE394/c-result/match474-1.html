@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+ <TITLE>17951a04c6.c</TITLE>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="text/javascript">
+  <!--
+   function ZweiFrames(URL1,F1,URL2,F2)
+   {
+    parent.frames[F1].location.href=URL1;
+    parent.frames[F2].location.href=URL2;
+   }
+  //-->
+  </script>
+</HEAD>
+<BODY BGCOLOR="#ffffff" style="margin-left:25">
+<HR>
+<H3><CENTER>17951a04c6.c</CENTER></H3><HR>
+<PRE>
+<A NAME="0"></A>#include &lt;iostream&gt;
+#include&lt;cmath&gt;
+using namespace std;
+<FONT color="#0000ff"><div style="position:absolute;left:0"><A HREF="javascript:ZweiFrames('match474-0.html#0',2,'match474-top.html#0',1)"><IMG SRC="back.gif" ALT="other" BORDER="0" ALIGN="left"></A></div><B>int main(){
+int a,b,c,id[1000],amount[1000],balance[1000],pos;
+double balance1,balance2,amount1,amount2;
+string type[1000],type1,type2;
+double intr,totalin,sum=0;
+cin&gt;&gt;intr;
+cin&gt;&gt;c;
+for(int i=0;i&lt;c-2;i++){
+cin&gt;&gt;id[i]&gt;&gt;amount[i]&gt;&gt;type[i]&gt;&gt;balance[i];
+sum+=balance[i];
+}
+cin&gt;&gt;totalin;
+for(int i=0;i&lt;c-3;i++){
+	if(id[i]!=id[i+1]-1)
+		{
+			pos=i+1;
+			break;
+		}
+
+}
+
+if(type[pos]==&quot;credit&quot;)
+{
+	sum+=balance[pos]-amount[pos];
+	balance2=balance[pos]-amount[pos];
+}
+else{
+	sum+=balance[pos]+amount[pos];
+	balance2=balance[pos]+amount[pos];
+}
+
+
+ balance1=((totalin*100)*(365/(double)intr))-(double)sum;
+ if(balance1&gt;balance[pos-1]){
+	type1=&quot;credit&quot;;
+	amount1=balance1-balance[pos-1];
+    }
+else{
+ type1=&quot;debit&quot;;
+ amount1=balance[pos-1]-balance1;
+}
+
+if(balance2&gt;balance1){
+	type2=&quot;credit&quot;;
+	amount2=balance2-balance1;
+}
+else {
+	type2=&quot;debit&quot;;
+	amount2=balance1-balance2;
+}
+cout&lt;&lt;pos+1&lt;&lt;&quot; &quot;&lt;&lt;amount1&lt;&lt;&quot; &quot;&lt;&lt;type1&lt;&lt;&quot; &quot;&lt;&lt;round(balance1)&lt;&lt;endl;
+
+cout&lt;&lt;pos+2&lt;&lt;&quot; &quot;&lt;&lt;amount2&lt;&lt;&quot; &quot;&lt;&lt;type2&lt;&lt;&quot; &quot;&lt;&lt;round(balance2)&lt;&lt;endl;
+}</B></FONT>
+</PRE>
+</BODY>
+</HTML>
